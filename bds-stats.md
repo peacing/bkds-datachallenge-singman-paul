@@ -40,5 +40,40 @@ The sample variance is the square of that, 86.0.
 
 #### Q2
 
+**i: All real numbers:**
+The set of all reals are metric and continuous (by definition)
+
+**ii: {first, second, third}:**
+I would argue this is in between metric and non-metric. Yes, you can
+calculate a "distance" between coming in first and second (1) or 
+first and third (2) but it requires an implicit conversion from
+the text to the numerical equivalent.
+
+It is also an interval/discrete data type since it is ordinal with
+equally spaced intervals between the values.
+
+**iii: {Green, Blue, Yellow. Brown}:**
+This is a clear example of a non-metric, nominal data type.
+
+**iv: (1,2,3,4,5):**
+This is a metric data type, and is interval/discrete
+
+** v: 5 point scale of strongly disagree to strongly agree:**
+I would argue this is in between metric and non-metric based on the same logic
+used for part ii. I would consider this to be an ordinal data type since it
+gives a clear ordering of the variables, though the scale used to calculate a 
+"distance" could be arbitrary.
+
+
+#### Q3: What is the 68, 95, 99.7 rule for the normal distribution?
+
+This rule means that, given normally distributed data, you expect 68%
+of the data points to fall within plus/minus one standard deviation of the mean,
+95% of the data points to fall within a two std. dev range, and 99.7%
+to fall within a three std. dev range.
+
+
+
+
 
 
