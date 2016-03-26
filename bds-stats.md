@@ -72,6 +72,21 @@ of the data points to fall within plus/minus one standard deviation of the mean,
 95% of the data points to fall within a two std. dev range, and 99.7%
 to fall within a three std. dev range.
 
+#### Q4
+
+**a: Given N(100, 16) data, what percentile is 116?**
+The z-score for 116 is: (116 - 100)/16 = 1
+Looking up this z-score in a normal distribution table
+shows that this score is in the 84th percentile.
+
+#### Q5
+If we find a silver coin in the first drawer, we know that we opened a drawer
+in either cabinet B or C. If it was cabinet B we will find a silver coin in the
+other drawer. If it was cabinet C, we will find a gold coin in the other drawer.
+
+Therefore we have a 1/2, or 50% chance that the other
+drawer contains a silver coin.
+
 
 
 
