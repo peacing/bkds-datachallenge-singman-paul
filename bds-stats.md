@@ -251,6 +251,49 @@ Using a normal calculator, P(Z < 3.25) ~ 99.8%
 Therefore we can be confident that the difference in the means were are seeing between
 the two methods is real and not the result of random variation.
 
+#### Q13
+
+Initially my plan was to model the bookings data as a time series
+and see if there was a seasonality trend or auto-correlation, but those methods
+work better with multiple years of data.
+
+Instead I will perform a Chi-square goodness of fit test.
+Overall there were 16,916 bookings in the year and if they were uniformly distributed,
+there would be 1409.6 per month.
+
+To perform the Chi-square test we compute the (observed - expected)^2/expected and sum
+the values for each month. The resulting sum is 79 (see Jupyter notebook) 
+and our degrees of freedom is 11 since there are 12 months the bookings could be made in.
+
+Using a Chi-Square calculator with 11 DF and a Chi-square critical value of 79 leads
+to a cumulative probability of 1 that these data were not generated from a uniform
+distribution.
+
+#### Q14
+
+**a: Correlation of X1 and X2**
+
+The correlation between X1 and X2 is 0.746. This is a fairly high correlation and
+warrants PCA.
+
+**b: Calculate the eigenvectors of the covariance matrix**
+
+Using NumPy's linalg.eig method on the covariance matrix of the data,
+I found the eigenvectors for the first and second direction to be:
+
+[ [.728, -.685], [.685, .728] ]
+
+**c: Variance of principle components?**
+
+I used SciKit-learn's PCA class to fit the data with two components. The first
+component captures variance of 35.36, and the second contains variance of 5.14.
+
+**d: How much of the overall variability is explained by a single principal component?**
+
+To answer this question I used the explained variance ratio_ function. It explains that
+87.31% of the variability between X1 and X2 is captured by the first principal component.
+
+
 
 
 
