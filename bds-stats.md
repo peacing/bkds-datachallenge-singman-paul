@@ -81,11 +81,65 @@ shows that this score is in the 84th percentile.
 
 #### Q5
 If we find a silver coin in the first drawer, we know that we opened a drawer
-in either cabinet B or C. If it was cabinet B we will find a silver coin in the
+in either cabinet B or C. If it was cabinet B, we will find a silver coin in the
 other drawer. If it was cabinet C, we will find a gold coin in the other drawer.
 
 Therefore we have a 1/2, or 50% chance that the other
 drawer contains a silver coin.
+
+#### Q6
+The longer piece will be twice the length of the shorter piece
+if we make the cut anywhere outside the middle third of the segment.
+Assuming a uniform distribution of where the cut occurs, that means there's
+a 66.6% chance the resulting longer piece is more than twice the length
+of the short piece (anywhere int he first third, or last third of the segment).
+
+#### Q7
+
+This is a classic Bayes Theorem set up.
+
+P(A|B) = P(B|A)*P(A)/P(B)
+
+I will define:
+* A as having the flu
+* B as testing positive
+
+We are trying to solve the probability of having the flu given a positive test
+
+We need to solve for P(A), P(B) and P(B|A)
+
+We are given P(A) = 0.1
+We are also given the False Positive Rate (FPR) = 0.01
+and the False Negative Rate (FNR) = 0.0003
+
+To make the problem easier to intuit, I'm going to assign actual numbers to these rates.
+Assume there are 100,000 people. With what we are given, we know 10,000 people have the flu
+and 90,000 do not.
+
+The FNR = FN/(FN + TP), which can be interpreted as the percent of
+times a negative test results from someone positive with the condition.
+We know that (FN + TP) = 10,000 (in the 100k population), so we can solve for FN:
+
+0.0003 = FN/10000. FN = 3. If FN + TP = 10,000, we know TP = 9,997.
+
+We use the same logic on the FPR to solve for FP = 900 & TN = 89,100.
+
+We can use these numbers to solve for the P(B), the probability
+of getting a positive test. There are two ways to get a positive test result:
+1) a true positive or 2) a false positive. With TP = 9,997 and FP = 900 in a
+population of 100k, the probability of getting a positive test result is:
+(9,997 + 900)/100,000 = P(B) = 0.10897
+
+Lastly, we interpret the P(B|A) as the probability of getting a positive test
+given that you have the flu. This can also be called the True Positive Rate (TPR) and
+TPR = 1 - FNR = .9997.
+
+Plugging these values into the equation we get:
+P(A|B) = 0.9997 * 0.1 / 0.10897 = 91.74%
+
+To summarize, there is a 91.74% chance that given a positive test result,
+a person has the flu.
+
 
 
 
