@@ -180,7 +180,7 @@ SE(U) = 0.08 * sqrt(8000) = 7.155
 
 #### Q10
 
-To use the Monte Carlo method to simulat the standard normal density on the interval [0, 1],
+To use the Monte Carlo method to simulate the standard normal density on the interval [0, 1],
 we need to generate many random numbers with the pdf of the normal distribution. We will keep track
 of the percent of the generated numbers that fall in the [0,1] range.
 
@@ -191,6 +191,69 @@ This is very close to the actual value of 34% you would expect since
 68% of values lie within 1 standard deviation, and the range [0,1] is half of that.
 
 #### Q11
+
+If typically 3% of the Brooklyn population eats at Robertas, we would expect
+.03 * 7600 = 228 people from Greenpoint to visit his restaurant in a month. Instead of 
+228, Roberta got 4,000 visitors.
+
+The absolute difference between those numbers leads me to be confident that the
+promotion had an effect. However, we can be more rigorous by modeling the problem
+with a binomial distribution where n = 7600 and p = .03
+
+If the residents of Greenpoint are assumed to act independently, we expect a mean of
+n * p people to visit the restaurant with a variance equal to n * p * (1-p)
+
+Plugging in the numbers leads to:
+mean = (7600 * .03) = 228
+var = 7600 * .03 * .97 = 221.16
+The standard deviation is the square root of the variation, 14.87.
+
+Since n is relatively large and p is not astronomically small, we can assume these
+variables behave normally because of the Central Limit Theorem.
+
+We want to find the probability of seeing a value of 4,000 (or greater) given this N(228, 14,87) distribution
+P(4000) = P(x < 4000)
+ = P(Z < 4000-228/14.87)
+ = P(Z < 253.665) = basically 100%.
+ 
+To sum, we can be certain that the promotion had an effect on restaurant visits
+
+#### Q12
+
+To determine if there is a difference in the two brewing methods, we must
+perform t-test comparing the differences of the means.
+
+To start, I'll throw the testing results into a pandas DataFrame and
+use it to efficiently calculate the means and standard deviations of the samples.
+
+mu A = 80.021
+mu B = 79.979
+Var(A) = 0.000574
+Var()B = 0.000984
+
+The difference of the means is 0.042 and we want to test the hypothesis that this difference is
+significant. In order to do this we will take the null hypothesis, that they are not significantly
+different and try to refute it. In order to do this, we need to calculate the calculate the 
+variance of the difference of the means. The formula is:
+
+Variance(mean A - mean B) = (var A/n(A) + (var(B)/n(b)
+Variance(mean A - mean B) = .000574/13 + .000984/8
+Variance(mean A - mean B) = 0.000167
+
+We take the square root to find the standard deviation, .01293
+
+Lastly we use a normal calculator to calculate a p value, which tells us how likely the
+difference in the means we are observing is.
+
+Z = (.042 - 0)/0.1293 = 3.25
+Using a normal calculator, P(Z < 3.25) ~ 99.8%
+
+Therefore we can be confident that the difference in the means were are seeing between
+the two methods is real and not the result of random variation.
+
+
+
+
 
 
 
