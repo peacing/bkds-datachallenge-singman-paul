@@ -140,9 +140,43 @@ P(A|B) = 0.9997 * 0.1 / 0.10897 = 91.74%
 To summarize, there is a 91.74% chance that given a positive test result,
 a person has the flu.
 
+#### Q8
 
+We have a Poisson distribution with a mean of 2 failures per year. This means we would expect
+an average of 100 failures over 50 years. The Probability Distribution Function (PDF) for 
+the Poisson is (excuse the lack of mathematical notation):
 
+P(k events) = (mu^k * e^-mu)/k!
 
+To calculate the probability of 100 or more failures, we would do:
+
+1 - P(k), for all k 0 to 99. I've utilized a Poisson distribution calculator and found
+the answer to be: P(k >= 100) = 51.33%
+
+#### Q9
+
+* The estimated standard error of the sample mean is the standard deviation of
+the sample, which is given to be 0.8
+
+* To calculate a 95% confidence interval for the population average, we need to calculate
+the estimated population standard deviation. The formula is:
+
+s.d.(population) = s.d(sample)/sqrt(n), where n is the size of the sample.
+s.d.(population) = 0.8/sqrt(100) = 0.08.
+
+A 95% confidence interval covers the range 1.96* +/- the mean.
+Therefore the 95% confidence interval is 1.6 +- 1.96 * 0.08.
+95% CI = [1.44 1.76]
+
+* An estimate for the total No. of umbrellas is simply the sample mean * population size.
+U = 1.6 * 8000 = 12,800.
+
+* Estimated standard error of U is the estimated standard deviation of the population,
+multiplied by the square root of the size of the population:
+SE(U) = 0.08 * sqrt(8000) = 7.155
+
+* Lastly then the 95% CI for the total No. of umbrellas is:
+12,800 +- 1.96 * 7.155 = [12,785 12,814]
 
 
 
