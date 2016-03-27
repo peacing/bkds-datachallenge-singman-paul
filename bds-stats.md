@@ -178,5 +178,19 @@ SE(U) = 0.08 * sqrt(8000) = 7.155
 * Lastly then the 95% CI for the total No. of umbrellas is:
 12,800 +- 1.96 * 7.155 = [12,785 12,814]
 
+#### Q10
+
+To use the Monte Carlo method to simulat the standard normal density on the interval [0, 1],
+we need to generate many random numbers with the pdf of the normal distribution. We will keep track
+of the percent of the generated numbers that fall in the [0,1] range.
+
+See the code in the Jupyter Notebook for details of simulation implementation
+I used NumPy's random normal method to generate the random numbers.
+The result I got for the density in the [0,1] range is 34.46%.
+This is very close to the actual value of 34% you would expect since
+68% of values lie within 1 standard deviation, and the range [0,1] is half of that.
+
+#### Q11
+
 
 
